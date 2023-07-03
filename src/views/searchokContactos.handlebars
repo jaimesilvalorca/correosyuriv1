@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Correos Yuri</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Empleados
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/empleados">Mostrar todos los empleados</a></li>
+                    <li><a class="dropdown-item" href="/api/empleados/registrar">Registrar empleado</a></li>
+                    <li><a class="dropdown-item" href="/api/empleados/search">Buscar empleado</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Cargas Familiares
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/cargas">Mostrar todas las cargas</a></li>
+                    <li><a class="dropdown-item" href="/api/cargas/registrar">Registrar cargas</a></li>
+                    <li><a class="dropdown-item" href="/api/cargas/search">Buscar cargas</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Contactos de emergencia
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/contactos">Mostrar todos los contactos</a></li>
+                    <li><a class="dropdown-item" href="/api/contactos/registrar">Registrar contactos</a></li>
+                    <li><a class="dropdown-item" href="/api/contactos/search">Buscar Contacto</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/session/logout">Cerrar Sesión</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+<center>
+<h1>Conctatos de Emergencia</h1>
+</center>
+<br>
+<table id="productsTable" class="table table-striped">
+    <tr>
+        <td><strong>Rut empleado</strong></td>
+        <td><strong>Nombre Contacto</strong></td>
+        <td><strong>Relacion</strong></td>
+        <td><strong>telefono</strong></td>
+    </tr>
+    {{#each contactos}}
+    <tr>
+        <td>{{this.rut_empleado}}</td>
+        <td>{{this.nombre_contacto}}</td>
+        <td>{{this.relacion}}</td>
+        <td>{{this.telefono}}</td>
+    </tr>
+    {{/each}}
+</table>
+
+{{#each contactos}}
+<div>
+ <center>
+    <center>
+  <form>
+    <button type="button" onclick="redirectToEdit('/api/contactos/{{ this.rut_empleado }}/editar')" class="btn btn-primary">Modificar</button>
+  </form>
+    </center>
+ </center> 
+</div>
+<div>
+     <center>
+<form action="/api/contactos/{{ this.rut_empleado }}/eliminar" method="POST">
+    <button type="submit" class="btn btn-primary">Eliminar</button>
+  </form>
+ </center> 
+
+</div>
+{{/each}}
+
+<script>
+function redirectToEdit(url) {
+  window.location.href = url;
+}
+</script>

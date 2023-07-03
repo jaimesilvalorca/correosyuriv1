@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Correos Yuri</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Empleados
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/empleados">Mostrar todos los empleados</a></li>
+                    <li><a class="dropdown-item" href="/api/empleados/registrar">Registrar empleado</a></li>
+                    <li><a class="dropdown-item" href="/api/empleados/search">Buscar empleado</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Cargas Familiares
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/cargas">Mostrar todas las cargas</a></li>
+                    <li><a class="dropdown-item" href="/api/cargas/registrar">Registrar cargas</a></li>
+                    <li><a class="dropdown-item" href="/api/cargas/search">Buscar cargas</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Contactos de emergencia
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/contactos">Mostrar todos los contactos</a></li>
+                    <li><a class="dropdown-item" href="/api/contactos/registrar">Registrar contactos</a></li>
+                    <li><a class="dropdown-item" href="/api/contactos/search">Buscar Contacto</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/session/logout">Cerrar Sesión</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<h1>
+    <center>Registrar Usuarios</center>
+</h1>
+
+<form form action="/api/empleados" method="post">
+
+    <div class="form-group">
+            <label for="full_name_id" class="control-label"> Rut: </label>
+            <input type="text" class="form-control" id="full_name_id" name="rut" placeholder="xxxxxxxx-x">
+    </div>
+
+    <div class="form-group">
+            <label for="street1_id" class="control-label"> Nombre</label>
+            <input type="text" class="form-control" id="street1_id" name="nombre"
+                placeholder="Susana Oria">
+    </div>
+
+    <div class="form-group">
+            <label for="street2_id" class="control-label"> Fecha </label>
+            <input type="date" class="form-control" id="street2_id" name="fecha"
+                placeholder="xx/xx/xxxx">
+    </div>
+
+    <div class="form-group">
+            <label for="city_id" class="control-label"> Genero </label>
+            <input type="text" class="form-control" id="city_id" name="genero" placeholder="Helicoptero">
+    </div>
+
+    <div class="form-group">
+            <label for="state_id" class="control-label"> Cargo </label>
+            <input type="text" class="form-control" id="city_id" name="cargo" placeholder="Chamullento">
+
+    </div>
+
+    <div class="form-group">
+            <label for="zip_id" class="control-label">Salario $</label>
+            <input type="number" class="form-control" id="zip_id" name="salario" placeholder="10000">
+    </div>
+        <div class="form-group">
+            <label for="zip_id" class="control-label">Comuna</label>
+            <input type="text" class="form-control" id="zip_id" name="comuna" placeholder="Puente alto">
+    </div>
+        <div class="form-group">
+            <label for="zip_id" class="control-label">Direccion</label>
+            <input type="text" class="form-control" id="zip_id" name="direccion" placeholder="direccion">
+    </div>
+
+        <div class="form-group">
+            <label for="zip_id" class="control-label">Telefono</label>
+            <input type="number" class="form-control" id="zip_id" name="telefono" placeholder="xxxxxxxxx">
+    </div>
+
+        </div>
+        <div class="form-group">
+            <label for="zip_id" class="control-label">AFP</label>
+            <input type="text" class="form-control" id="zip_id" name="afp" placeholder="CHANTAMODELO">
+    </div>
+        </div>
+        <div class="form-group">
+            <label for="zip_id" class="control-label">Isapre</label>
+            <input type="text" class="form-control" id="zip_id" name="isapre" placeholder="LAMASCARA">
+    </div><br>
+
+    <div class="form-group">
+            <center><button type="submit" class="btn btn-primary"> Ingresar Trabajador </button> </center>
+    </div>
+
+</form>

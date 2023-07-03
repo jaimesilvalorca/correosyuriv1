@@ -1,0 +1,137 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Correos Yuri</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Empleados
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/empleados">Mostrar todos los empleados</a></li>
+                    <li><a class="dropdown-item" href="/api/empleados/registrar">Registrar empleado</a></li>
+                    <li><a class="dropdown-item" href="/api/empleados/search">Buscar empleado</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Cargas Familiares
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/cargas">Mostrar todas las cargas</a></li>
+                    <li><a class="dropdown-item" href="/api/cargas/registrar">Registrar cargas</a></li>
+                    <li><a class="dropdown-item" href="/api/cargas/search">Buscar cargas</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Contactos de emergencia
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/contactos">Mostrar todos los contactos</a></li>
+                    <li><a class="dropdown-item" href="/api/contactos/registrar">Registrar contactos</a></li>
+                    <li><a class="dropdown-item" href="/api/contactos/search">Buscar Contacto</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/session/logout">Cerrar Sesión</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+
+<center>
+<h1>Empleado</h1>
+</center>
+<br>
+<table id="productsTable" class="table table-striped">
+    <tr>
+        <td><strong>rut</strong></td>
+        <td><strong>nombre</strong></td>
+        <td><strong>fecha</strong></td>
+        <td><strong>genero</strong></td>
+        <td><strong>cargo</strong></td>
+        <td><strong>salario</strong></td>
+        <td><strong>comuna</strong></td>
+        <td><strong>direccion</strong></td>
+        <td><strong>telefono</strong></td>
+        <td><strong>afp</strong></td>
+        <td><strong>isapre</strong></td>
+    </tr>
+    {{#each empleados}}
+    <tr>
+        <td>{{this.rut}}</td>
+        <td>{{this.nombre}}</td>
+        <td>{{this.fecha}}</td>
+        <td>{{this.genero}}</td>
+        <td>{{this.cargo}}</td>
+        <td>{{this.salario}}</td>
+        <td>{{this.comuna}}</td>
+        <td>{{this.direccion}}</td>
+        <td>{{this.telefono}}</td>
+        <td>{{this.afp}}</td>
+        <td>{{this.isapre}}</td>
+    </tr>
+    {{/each}}
+    </form>
+</table>
+{{#each empleados}}
+<div>
+ <center>
+    <center>
+  <form>
+    <button type="button" onclick="redirectToEdit('/api/empleados/{{ this.rut }}/editar')" class="btn btn-primary">Modificar</button>
+  </form>
+    </center>
+ </center> 
+</div>
+<div>
+     <center>
+<form action="/api/empleados/{{ this.rut }}/eliminar" method="POST">
+    <button type="submit" class="btn btn-primary">Eliminar</button>
+  </form>
+ </center> 
+
+</div>
+</div>
+</section>
+{{/each}}
+  <div
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <div class="text-white mb-3 mb-md-0">
+      Copyright © 2023. All rights reserved CorreosYuri.
+    </div>
+    <div>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="#!" class="text-white">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </div>
+
+
+<script>
+function redirectToEdit(url) {
+  window.location.href = url;
+}
+</script>

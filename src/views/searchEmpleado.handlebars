@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Correos Yuri</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Empleados
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/empleados">Mostrar todos los empleados</a></li>
+                    <li><a class="dropdown-item" href="/api/empleados/registrar">Registrar empleado</a></li>
+                    <li><a class="dropdown-item" href="/api/empleados/search">Buscar empleado</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Cargas Familiares
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/cargas">Mostrar todas las cargas</a></li>
+                    <li><a class="dropdown-item" href="/api/cargas/registrar">Registrar cargas</a></li>
+                    <li><a class="dropdown-item" href="/api/cargas/search">Buscar cargas</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Contactos de emergencia
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/contactos">Mostrar todos los contactos</a></li>
+                    <li><a class="dropdown-item" href="/api/contactos/registrar">Registrar contactos</a></li>
+                    <li><a class="dropdown-item" href="/api/contactos/search">Buscar Contacto</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/session/logout">Cerrar Sesión</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<div>
+
+        <center> 
+        <h1>Buscar empleado</h1>
+    </center>
+
+    <form action="/api/empleados/buscar" method="get">
+
+            <div class="form-group">
+            <label for="zip_id" class="control-label">Rut</label>
+            <input type="text" class="form-control" id="zip_id" name="rut" placeholder="xxxxxxxxx">
+    </div><br>
+
+    <div class="form-group">
+            <center><button type="submit" class="btn btn-primary"> Buscar   </button> </center>
+    </div>
+
+    </form>
+</div>

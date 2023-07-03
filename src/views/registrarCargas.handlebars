@@ -1,0 +1,120 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Correos Yuri</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Empleados
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/empleados">Mostrar todos los empleados</a></li>
+                    <li><a class="dropdown-item" href="/api/empleados/registrar">Registrar empleado</a></li>
+                    <li><a class="dropdown-item" href="/api/empleados/search">Buscar empleado</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Cargas Familiares
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/cargas">Mostrar todas las cargas</a></li>
+                    <li><a class="dropdown-item" href="/api/cargas/registrar">Registrar cargas</a></li>
+                    <li><a class="dropdown-item" href="/api/cargas/search">Buscar cargas</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Contactos de emergencia
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/contactos">Mostrar todos los contactos</a></li>
+                    <li><a class="dropdown-item" href="/api/contactos/registrar">Registrar contactos</a></li>
+                    <li><a class="dropdown-item" href="/api/contactos/search">Buscar Contacto</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/session/logout">Cerrar Sesión</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <h1><center>Registrar Cargas Familiares</center></h1>
+
+<form action="/api/cargas" method="post">
+    {{!-- Rut_Empleado: <input type="text" name="rut_empleado"><br>
+    Nombre_Carga: <input type="text" name="nombre_carga"><br>
+    Parentesco: <input type="text" name="parentesco"><br>
+    Genero: <input type="text" name="genero"><br>
+    Rut_Carga: <input type="text" name="rut_carga"><br>
+    <br>
+
+    <input type="submit" value="Crear"> --}}
+
+        <div class="form-group">
+            <label for="full_name_id" class="control-label"> Rut Empleado: </label>
+            <input type="text" class="form-control" id="full_name_id" name="rut_empleado" placeholder="xxxxxxxx-x">
+    </div>
+
+    <div class="form-group">
+            <label for="street1_id" class="control-label"> Nombre Carga</label>
+            <input type="text" class="form-control" id="street1_id" name="nombre_carga"
+                placeholder="Susana Oria">
+    </div>
+
+    <div class="form-group">
+            <label for="city_id" class="control-label"> Parentesco</label>
+            <input type="text" class="form-control" id="city_id" name="parentesco" placeholder="FAMILIA">
+    </div>
+
+        <div class="form-group">
+            <label for="zip_id" class="control-label">Genero</label>
+            <input type="text" class="form-control" id="zip_id" name="genero" placeholder="HELICOPTERO">
+    </div>
+            <div class="form-group">
+            <label for="full_name_id" class="control-label"> Rut Empleado: </label>
+            <input type="text" class="form-control" id="full_name_id" name="rut_carga" placeholder="xxxxxxxx-x">
+    </div><br>
+
+    <div class="form-group">
+            <center><button type="submit" class="btn btn-primary"> Ingresar Contacto  </button> </center>
+    </div>
+
+
+</form>
+
+
+
+    </div>
+      <div
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <div class="text-white mb-3 mb-md-0">
+      Copyright © 2023. All rights reserved CorreosYuri.
+    </div>
+    <div>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="#!" class="text-white">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </div>
+</section>
